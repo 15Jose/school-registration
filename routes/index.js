@@ -8,4 +8,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/courses', courseController.viewAll);
-module.exports = router;
+router.get('/courses/profile/:id', courseController.viewProfile);
+router.get('/course/edit/:id', courseController.renderEditForm);
+router.post('/courses/edit/:id', courseController.updateCourse);
+router.get('/courses/add', courseController.renderAddForm);
+router.post('/courses/add', courseController.addCourse);
+router.get('/courses/delete/:id', courseController.deleteCourse);
